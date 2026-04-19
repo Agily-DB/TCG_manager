@@ -1,0 +1,72 @@
+{
+  "name": "pokemon-tcg-manager",
+  "version": "1.0.0",
+  "description": "Aplicação desktop para gerenciamento de coleção de cartas do TCG Pokémon",
+  "type": "module",
+  "main": "dist-electron/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build && node scripts/copy-assets.mjs && cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
+    "preview": "electron-vite preview",
+    "test": "vitest --run",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^10.1.0",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "fast-check": "^3.22.0",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.2",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "@electron-toolkit/tsconfig": "^2.0.0",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@fontsource/inter": "^5.1.0",
+    "@tanstack/react-query": "^5.56.2",
+    "axios": "^1.7.7",
+    "better-sqlite3": "^11.3.0",
+    "puppeteer": "^23.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "uuid": "^10.0.0",
+    "zustand": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.pokemon-tcg-manager",
+    "productName": "Pokemon TCG Manager",
+    "directories": {
+      "output": "C:\\Users\\Bruno\\Desktop\\TCG-Build"
+    },
+    "files": [
+      "dist-electron/**/*",
+      "dist/**/*"
+    ],
+    "win": {
+      "target": "dir",
+      "sign": false,
+      "signingHashAlgorithms": []
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

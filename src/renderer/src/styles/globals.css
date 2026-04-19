@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply h-full bg-pokedex-black text-pokedex-white font-ui;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-pokedex-panel;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pokedex-gray rounded-full;
+  }
+}
